@@ -58,7 +58,7 @@ app.delete('/api/notes/:id', (req, res) => {
         for (let i = 0; i < db.length; i++) {
             const currentNote = db[i];
             if (currentNote.id === noteId) {
-                db.splice(i,1);
+                db.splice(i, 1);
                 writeToFile("./db/db.json", db);
                 readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
                 return;
